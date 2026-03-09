@@ -1,0 +1,248 @@
+.input-form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid #0066cc;
+}
+
+.form-header h1 {
+  color: #0066cc;
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tagline {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.required {
+  color: #c00;
+  font-weight: bold;
+}
+
+.help-text {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 0.875rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.form-group textarea:hover {
+  border-color: #999;
+}
+
+.form-group textarea:focus {
+  border-color: #0066cc;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.form-group textarea[aria-invalid="true"] {
+  border-color: #c00;
+}
+
+.form-group textarea[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.1);
+}
+
+.error-message {
+  display: block;
+  color: #c00;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Preferences fieldset */
+.preferences-group {
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+}
+
+.preferences-group legend {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  padding: 0 0.5rem;
+}
+
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-top: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.checkbox-label:hover {
+  background-color: rgba(0, 102, 204, 0.05);
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.checkbox-label span {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Disclosure group */
+.disclosure-group {
+  background-color: #fff3cd;
+  border: 2px solid #ffc107;
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.disclosure-label {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.disclosure-help {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: #856404;
+}
+
+.submit-button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 1.125rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #0052a3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:focus {
+  outline: 3px solid #0066cc;
+  outline-offset: 3px;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.loading-indicator {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #f0f7ff;
+  border-radius: 6px;
+  border: 2px solid #0066cc;
+}
+
+.loading-indicator p {
+  color: #0066cc;
+  font-weight: 500;
+  margin: 0;
+}
+
+.spinner {
+  border: 4px solid #e3f2fd;
+  border-top: 4px solid #0066cc;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .input-form {
+    padding: 1.5rem;
+  }
+
+  .form-header h1 {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .submit-button {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+}

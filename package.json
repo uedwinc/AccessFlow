@@ -1,0 +1,29 @@
+{
+  "name": "accessflow-mvp",
+  "version": "1.0.0",
+  "description": "AccessFlow - Empathetic job application assistant for disabled and neurodivergent job seekers",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=frontend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "build": "npm run build --workspaces",
+    "build:frontend": "npm run build --workspace=frontend",
+    "build:backend": "npm run build --workspace=backend",
+    "test": "npm run test --workspaces"
+  },
+  "keywords": [
+    "accessibility",
+    "job-application",
+    "aws",
+    "serverless"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.3.1"
+  }
+}

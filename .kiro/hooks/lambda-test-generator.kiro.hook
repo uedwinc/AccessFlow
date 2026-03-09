@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Lambda Test Generator",
+  "description": "Generates or updates Jest test files with happy path and error handling tests when Lambda handler files are saved",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "backend/src/handlers/*.ts"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Generate or update a Jest test file for this Lambda handler. The test should be placed in backend/src/handlers/__tests__/ directory with the naming pattern [handlerName].test.ts. Include tests for: 1) Happy path with valid input, 2) Basic error handling scenarios (invalid input, missing required fields), 3) Mock AWS services appropriately. Keep tests minimal but comprehensive for core functionality."
+  }
+}
