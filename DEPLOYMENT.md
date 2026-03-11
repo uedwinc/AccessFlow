@@ -114,8 +114,7 @@ aws lambda create-function \
       ],
       "Resource": [
         "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-sonnet-20241022-v2:0",
-        "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-haiku-20241022-v1:0",
-        "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-haiku-20240307-v1:0"
+        "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-haiku-20241022-v1:0"
       ]
     },
     {
@@ -310,7 +309,7 @@ aws lambda update-function-code \
 
 ### Lambda Timeout
 - Increase timeout to 60 seconds
-- Switch to faster Bedrock model (Haiku)
+- Switch to faster Bedrock model (Claude 3.5 Haiku)
 
 ### CORS Errors
 - Verify API Gateway CORS configuration
@@ -321,7 +320,7 @@ aws lambda update-function-code \
 - Verify model access enabled in Bedrock console
 
 ### High Costs
-- Switch to Haiku model
+- Switch to Claude 3.5 Haiku model
 - Implement request throttling
 - Set up billing alarms
 

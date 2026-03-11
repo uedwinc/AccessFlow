@@ -225,13 +225,13 @@ npm run dev -- --port 3001
 **Error: "Bedrock ThrottlingException"**
 - You're hitting rate limits
 - Wait a few seconds and try again
-- Consider using Claude Haiku (faster, cheaper)
+- Consider using Claude 3.5 Haiku (faster, cheaper)
 
 ### Slow Response Times
 
 If Bedrock calls take >30 seconds:
 - This is normal for Claude Sonnet (high quality, slower)
-- Switch to Claude Haiku for faster responses:
+- Switch to Claude 3.5 Haiku for faster responses:
   ```bash
   # Edit .env
   BEDROCK_MODEL_ID=anthropic.claude-3-5-haiku-20241022-v1:0
@@ -265,7 +265,7 @@ Press F12 → Console tab to see:
 
 - **Backend startup**: 2-5 seconds
 - **Frontend startup**: 3-10 seconds
-- **Bedrock API call**: 10-30 seconds (Sonnet), 5-15 seconds (Haiku)
+- **Bedrock API call**: 10-30 seconds (Sonnet), 5-15 seconds (Claude 3.5 Haiku)
 - **Total time per analysis**: 15-35 seconds
 
 ## Cost Monitoring

@@ -182,14 +182,7 @@ console.log('Generated session:', {
 - **Best for:** Good quality, faster responses
 - **Cost:** ~$0.007 per application
 - **Speed:** Fast
-- **Use when:** Balancing quality and cost
-
-### Claude 3 Haiku (Legacy)
-- **Model ID:** `anthropic.claude-3-haiku-20240307-v1:0`
-- **Best for:** Lowest cost, simple tasks
-- **Cost:** ~$0.002 per application
-- **Speed:** Fastest
-- **Use when:** Budget is primary concern
+- **Use when:** Balancing quality and cost (recommended for production)
 
 ## Configuration
 
@@ -211,8 +204,7 @@ BEDROCK_MODEL_ID=anthropic.claude-3-5-sonnet-20241022-v2:0
   "Action": ["bedrock:InvokeModel"],
   "Resource": [
     "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-sonnet-20241022-v2:0",
-    "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-haiku-20241022-v1:0",
-    "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-haiku-20240307-v1:0"
+    "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-haiku-20241022-v1:0"
   ]
 }
 ```
@@ -253,7 +245,6 @@ curl -X POST http://localhost:3001/api/analyze \
 
 - **Claude 3.5 Sonnet:** 5-10 seconds
 - **Claude 3.5 Haiku:** 2-5 seconds
-- **Claude 3 Haiku:** 1-3 seconds
 
 Times vary based on input length and network latency.
 
@@ -305,7 +296,7 @@ Times vary based on input length and network latency.
 ### High Costs
 
 **Solution:**
-- Switch to Haiku model
+- Switch to Claude 3.5 Haiku model
 - Reduce `maxTokens` limits
 - Implement caching for identical inputs
 

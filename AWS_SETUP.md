@@ -45,7 +45,6 @@ When deploying to Lambda, attach an IAM role with the following permissions:
 3. **Request Access** to Claude models:
    - Claude 3.5 Sonnet (recommended)
    - Claude 3.5 Haiku (faster, lower cost)
-   - Claude 3 Haiku (legacy, lowest cost)
 
 4. **Wait for Approval** (usually instant for most accounts)
 
@@ -59,8 +58,7 @@ You should see:
 ```json
 [
     "anthropic.claude-3-5-sonnet-20241022-v2:0",
-    "anthropic.claude-3-5-haiku-20241022-v1:0",
-    "anthropic.claude-3-haiku-20240307-v1:0"
+    "anthropic.claude-3-5-haiku-20241022-v1:0"
 ]
 ```
 
@@ -86,9 +84,6 @@ BEDROCK_MODEL_ID=anthropic.claude-3-5-sonnet-20241022-v2:0
 
 # Option 2: Claude 3.5 Haiku (good quality, faster, lower cost)
 # BEDROCK_MODEL_ID=anthropic.claude-3-5-haiku-20241022-v1:0
-
-# Option 3: Claude 3 Haiku (legacy, lowest cost)
-# BEDROCK_MODEL_ID=anthropic.claude-3-haiku-20240307-v1:0
 ```
 
 ## Step 4: Test Bedrock Connection
@@ -157,7 +152,6 @@ Open http://localhost:3000 and test the application!
 **Solution:** Check that your `BEDROCK_MODEL_ID` matches exactly one of:
 - `anthropic.claude-3-5-sonnet-20241022-v2:0`
 - `anthropic.claude-3-5-haiku-20241022-v1:0`
-- `anthropic.claude-3-haiku-20240307-v1:0`
 
 ### Error: "ThrottlingException"
 
@@ -195,7 +189,6 @@ Assuming:
 
 **Claude 3.5 Sonnet:** ~$0.027 per application
 **Claude 3.5 Haiku:** ~$0.007 per application
-**Claude 3 Haiku:** ~$0.002 per application
 
 ### Free Tier Notes
 
@@ -220,8 +213,7 @@ When deploying to Lambda, use this IAM policy:
       ],
       "Resource": [
         "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-sonnet-20241022-v2:0",
-        "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-haiku-20241022-v1:0",
-        "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-haiku-20240307-v1:0"
+        "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-haiku-20241022-v1:0"
       ]
     },
     {

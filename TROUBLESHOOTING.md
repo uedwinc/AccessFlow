@@ -131,7 +131,7 @@ Should create `output.json` with response. If error, check:
 
 **Cause:** Using Claude Sonnet (slower model)
 
-**Fix:** Switch to Haiku in `.env`:
+**Fix:** Switch to Claude 3.5 Haiku in `.env`:
 ```
 BEDROCK_MODEL_ID=anthropic.claude-3-5-haiku-20241022-v1:0
 ```

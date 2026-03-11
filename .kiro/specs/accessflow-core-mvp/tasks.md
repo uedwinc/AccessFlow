@@ -76,7 +76,7 @@ This implementation plan breaks down the AccessFlow Core MVP into discrete codin
     - Write callBedrockWithRetry() function with exponential backoff
     - Handle ThrottlingException with up to 3 retries
     - Handle ServiceUnavailableException with clear error messages
-    - Use Claude 3 Haiku model ID
+    - Use Claude 3.5 Haiku model ID
     - _Requirements: 4.1, 4.2, 4.5, 10.1_
   
   - [ ] 4.2 Implement job summary generation
@@ -347,7 +347,7 @@ This implementation plan breaks down the AccessFlow Core MVP into discrete codin
     - **Validates: Requirements 11.5**
   
   - [ ] 14.3 Verify cost-effective Bedrock model usage
-    - Confirm Claude 3 Haiku model ID is used
+    - Confirm Claude 3.5 Haiku model ID is used
     - Verify appropriate token limits are set
     - _Requirements: 11.2_
   
