@@ -29,24 +29,13 @@ async function buildLambda(handler) {
       bundle: true,
       platform: 'node',
       target: 'node22',
-      format: 'esm',
+      format: 'cjs',
       outfile: handler.output,
       external: [
         // AWS SDK v3 is provided by Lambda runtime
         '@aws-sdk/*'
       ],
-      banner: {
-        js: `
-// AWS Lambda Node 22 ESM compatibility
-import { createRequire } from 'module';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-const require = createRequire(import.meta.url);
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-`.trim()
-      },
+      banner: {},
       minify: true,
       sourcemap: true,
       metafile: true,

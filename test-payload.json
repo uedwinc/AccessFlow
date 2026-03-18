@@ -1,0 +1,8 @@
+{
+  "version": "2.0",
+  "routeKey": "POST /analyze",
+  "rawPath": "/analyze",
+  "headers": { "content-type": "application/json" },
+  "body": "{\"jobDescription\":\"Test job\",\"resumeText\":\"Test resume\",\"preferences\":{\"workStyle\":\"\",\"accommodations\":\"\",\"disclosureFlag\":false,\"includeInterviewPrep\":false}}",
+  "isBase64Encoded": false
+}

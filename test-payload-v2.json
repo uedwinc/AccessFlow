@@ -1,0 +1,22 @@
+{
+  "version": "2.0",
+  "routeKey": "POST /analyze",
+  "rawPath": "/prod/analyze",
+  "rawQueryString": "",
+  "headers": {
+    "content-type": "application/json",
+    "origin": "https://d1uephgkca0e0.cloudfront.net"
+  },
+  "requestContext": {
+    "accountId": "052101902987",
+    "apiId": "djzdw066t5",
+    "http": {
+      "method": "POST",
+      "path": "/prod/analyze",
+      "protocol": "HTTP/1.1"
+    },
+    "stage": "prod"
+  },
+  "body": "{\"jobDescription\":\"Software engineer role requiring Python and AWS experience\",\"resumeText\":\"5 years experience in Python development and cloud infrastructure\",\"preferences\":{\"workStyle\":\"remote\",\"accommodations\":\"\",\"disclosureFlag\":false,\"includeInterviewPrep\":false}}",
+  "isBase64Encoded": false
+}
