@@ -225,16 +225,16 @@ npm run dev -- --port 3001
 **Error: "Bedrock ThrottlingException"**
 - You're hitting rate limits
 - Wait a few seconds and try again
-- Consider using Claude 3.5 Haiku (faster, cheaper)
+- Consider using Claude Haiku 4.5 (faster, cheaper)
 
 ### Slow Response Times
 
 If Bedrock calls take >30 seconds:
 - This is normal for Claude Sonnet (high quality, slower)
-- Switch to Claude 3.5 Haiku for faster responses:
+- Switch to Claude Haiku 4.5 for faster responses:
   ```bash
   # Edit .env
-  BEDROCK_MODEL_ID=anthropic.claude-3-5-haiku-20241022-v1:0
+  BEDROCK_MODEL_ID=anthropic.claude-haiku-4-5-20251001-v1:0
   ```
 - Restart backend server
 
@@ -265,14 +265,14 @@ Press F12 → Console tab to see:
 
 - **Backend startup**: 2-5 seconds
 - **Frontend startup**: 3-10 seconds
-- **Bedrock API call**: 10-30 seconds (Sonnet), 5-15 seconds (Claude 3.5 Haiku)
+- **Bedrock API call**: 10-30 seconds (Sonnet), 5-15 seconds (Claude Haiku 4.5)
 - **Total time per analysis**: 15-35 seconds
 
 ## Cost Monitoring
 
 Each test costs approximately:
 - **Claude Sonnet 4**: ~$0.027 per analysis
-- **Claude 3.5 Haiku**: ~$0.007 per analysis
+- **Claude Haiku 4.5**: ~$0.01 per analysis
 
 For 10 tests: $0.07-$0.27 (well within Free Tier)
 

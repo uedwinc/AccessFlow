@@ -91,7 +91,7 @@ BEDROCK_MODEL_ID=anthropic.claude-3-5-sonnet-20241022-v2:0
 
 ✅ **Model options:**
 - Claude 3.5 Sonnet (default) - Best quality
-- Claude 3.5 Haiku - Faster, lower cost
+- Claude Haiku 4.5 - Near-frontier performance, faster, lower cost
 
 ### 6. Documentation
 
@@ -152,7 +152,7 @@ aws configure
 1. Go to AWS Console → Amazon Bedrock
 2. Click "Model Access" in left sidebar
 3. Click "Request model access"
-4. Select Claude models (3.5 Sonnet, 3.5 Haiku)
+4. Select Claude models (3.5 Sonnet, Haiku 4.5)
 5. Submit request (usually approved instantly)
 
 ### 3. Configure Environment
@@ -210,13 +210,13 @@ Open http://localhost:3000 and:
 | Model | Cost per Application |
 |-------|---------------------|
 | Claude 3.5 Sonnet | ~$0.027 |
-| Claude 3.5 Haiku | ~$0.007 |
+| Claude Haiku 4.5 | ~$0.01 |
 
 ### For Competition Demo
 
 **100 applications:**
 - Sonnet: $2.70
-- Haiku: $0.70
+- Haiku 4.5: $1.00
 
 **Recommendation:** Use Claude 3.5 Sonnet for demo (best quality)
 
@@ -245,7 +245,7 @@ Open http://localhost:3000 and:
 - [ ] Interview prep with accommodations
 - [ ] Interview prep without accommodations
 - [ ] Error handling (invalid credentials, throttling)
-- [ ] Different model IDs (Sonnet, Claude 3.5 Haiku)
+- [ ] Different model IDs (Sonnet, Claude Haiku 4.5)
 
 ## Next Steps
 
@@ -278,13 +278,13 @@ Open http://localhost:3000 and:
 ### "Invalid model identifier"
 → Check `BEDROCK_MODEL_ID` matches exactly:
 - `anthropic.claude-3-5-sonnet-20241022-v2:0`
-- `anthropic.claude-3-5-haiku-20241022-v1:0`
+- `anthropic.claude-haiku-4-5-20251001-v1:0`
 
 ### "ThrottlingException"
 → Wait a moment and retry, or switch to faster model
 
 ### High costs
-→ Switch to Claude 3.5 Haiku model in `.env`
+→ Switch to Claude Haiku 4.5 model in `.env`
 
 ## Files Modified
 

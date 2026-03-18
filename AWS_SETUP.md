@@ -44,7 +44,7 @@ When deploying to Lambda, attach an IAM role with the following permissions:
 2. **Go to Model Access** (in the left sidebar)
 3. **Request Access** to Claude models:
    - Claude 3.5 Sonnet (recommended)
-   - Claude 3.5 Haiku (faster, lower cost)
+   - Claude Haiku 4.5 (faster, lower cost)
 
 4. **Wait for Approval** (usually instant for most accounts)
 
@@ -58,7 +58,7 @@ You should see:
 ```json
 [
     "anthropic.claude-3-5-sonnet-20241022-v2:0",
-    "anthropic.claude-3-5-haiku-20241022-v1:0"
+    "anthropic.claude-haiku-4-5-20251001-v1:0"
 ]
 ```
 
@@ -82,8 +82,8 @@ AWS_REGION=us-east-1
 # Option 1: Claude 3.5 Sonnet (best quality, higher cost)
 BEDROCK_MODEL_ID=anthropic.claude-3-5-sonnet-20241022-v2:0
 
-# Option 2: Claude 3.5 Haiku (good quality, faster, lower cost)
-# BEDROCK_MODEL_ID=anthropic.claude-3-5-haiku-20241022-v1:0
+# Option 2: Claude Haiku 4.5 (near-frontier performance, faster, lower cost)
+# BEDROCK_MODEL_ID=anthropic.claude-haiku-4-5-20251001-v1:0
 ```
 
 ## Step 4: Test Bedrock Connection
@@ -151,7 +151,7 @@ Open http://localhost:3000 and test the application!
 
 **Solution:** Check that your `BEDROCK_MODEL_ID` matches exactly one of:
 - `anthropic.claude-3-5-sonnet-20241022-v2:0`
-- `anthropic.claude-3-5-haiku-20241022-v1:0`
+- `anthropic.claude-haiku-4-5-20251001-v1:0`
 
 ### Error: "ThrottlingException"
 
@@ -172,13 +172,9 @@ Open http://localhost:3000 and test the application!
 - Input: $3.00 per million tokens
 - Output: $15.00 per million tokens
 
-**Claude 3.5 Haiku:**
-- Input: $0.80 per million tokens
-- Output: $4.00 per million tokens
-
-**Claude 3 Haiku (legacy):**
-- Input: $0.25 per million tokens
-- Output: $1.25 per million tokens
+**Claude Haiku 4.5:**
+- Input: $1.00 per million tokens
+- Output: $5.00 per million tokens
 
 ### Example Cost per Application
 
@@ -188,7 +184,7 @@ Assuming:
 - Generated content: ~1500 tokens
 
 **Claude 3.5 Sonnet:** ~$0.027 per application
-**Claude 3.5 Haiku:** ~$0.007 per application
+**Claude Haiku 4.5:** ~$0.01 per application
 
 ### Free Tier Notes
 
@@ -213,7 +209,7 @@ When deploying to Lambda, use this IAM policy:
       ],
       "Resource": [
         "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-sonnet-20241022-v2:0",
-        "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-haiku-20241022-v1:0"
+        "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0"
       ]
     },
     {

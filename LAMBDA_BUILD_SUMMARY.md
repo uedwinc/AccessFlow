@@ -123,7 +123,7 @@ BEDROCK_MODEL_ID=anthropic.claude-3-5-sonnet-20241022-v2:0
   "Action": ["bedrock:InvokeModel"],
   "Resource": [
     "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-sonnet-20241022-v2:0",
-    "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-haiku-20241022-v1:0"
+    "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0"
   ]
 }
 ```
@@ -218,7 +218,7 @@ curl -X POST https://your-api-id.execute-api.us-east-1.amazonaws.com/api/analyze
 
 ### Bedrock Costs
 - Claude 3.5 Sonnet: ~$81/month
-- Claude 3.5 Haiku: ~$21/month
+- Claude Haiku 4.5: ~$30/month
 
 ## 🎉 Benefits
 

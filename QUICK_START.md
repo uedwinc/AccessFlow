@@ -93,14 +93,14 @@ After ~5-10 seconds, you should see:
 | "Could not load credentials" | Run `aws configure` |
 | "Access denied to model" | Enable Bedrock model access in AWS Console |
 | Port 3000/3001 in use | Change ports in vite.config.ts / local-server.ts |
-| Slow responses | Switch to Claude 3.5 Haiku model in .env |
+| Slow responses | Switch to Claude Haiku 4.5 model in .env |
 
 ## 💰 Cost Per Test
 
 - **Claude 3.5 Sonnet:** ~$0.03 per application
-- **Claude 3.5 Haiku:** ~$0.01 per application
+- **Claude Haiku 4.5:** ~$0.01 per application
 
-For 100 test runs: $3 (Sonnet) or $1 (Claude 3.5 Haiku)
+For 100 test runs: $3 (Sonnet) or $1 (Claude Haiku 4.5)
 
 ## 📚 More Info
 

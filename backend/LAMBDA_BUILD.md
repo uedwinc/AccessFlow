@@ -230,7 +230,7 @@ npm install
 
 **Solution:** 
 - Increase Lambda timeout to 60 seconds
-- Switch to faster Bedrock model (Claude 3.5 Haiku)
+- Switch to faster Bedrock model (Claude Haiku 4.5)
 - Optimize prompts to reduce token count
 
 ### Module Not Found in Lambda
@@ -325,7 +325,7 @@ Recommended: 1024 MB
 
 **Lambda costs:** Free (well within free tier)
 
-**Bedrock costs:** ~$81/month (Claude 3.5 Sonnet) or ~$21/month (Claude 3.5 Haiku)
+**Bedrock costs:** ~$81/month (Claude 3.5 Sonnet) or ~$30/month (Claude Haiku 4.5)
 
 ## Next Steps
 

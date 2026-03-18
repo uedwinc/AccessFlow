@@ -91,7 +91,7 @@ Should list Claude models. If empty or error:
 ```bash
 aws bedrock-runtime invoke-model \
   --region us-east-1 \
-  --model-id anthropic.claude-3-5-haiku-20241022-v1:0 \
+  --model-id anthropic.claude-haiku-4-5-20251001-v1:0 \
   --body '{"anthropic_version":"bedrock-2023-05-31","max_tokens":100,"messages":[{"role":"user","content":"Hello"}]}' \
   output.json
 ```
@@ -131,9 +131,9 @@ Should create `output.json` with response. If error, check:
 
 **Cause:** Using Claude Sonnet (slower model)
 
-**Fix:** Switch to Claude 3.5 Haiku in `.env`:
+**Fix:** Switch to Claude Haiku 4.5 in `.env`:
 ```
-BEDROCK_MODEL_ID=anthropic.claude-3-5-haiku-20241022-v1:0
+BEDROCK_MODEL_ID=anthropic.claude-haiku-4-5-20251001-v1:0
 ```
 
 ### Issue: "ThrottlingException"

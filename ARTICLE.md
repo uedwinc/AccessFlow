@@ -47,7 +47,7 @@ AccessFlow uses a serverless architecture optimized for AWS Free Tier, ensuring 
 
 **Backend**: Node.js 22.x Lambda functions handling application analysis requests. The serverless approach minimizes costs while providing automatic scaling.
 
-**AI Engine**: Amazon Bedrock with Claude 3.5 Haiku model via the Converse API. I chose Claude 3.5 Haiku for its balance of quality and cost-effectiveness (~$0.007 per application analysis).
+**AI Engine**: Amazon Bedrock with Claude Haiku 4.5 model via the Converse API. I chose Claude Haiku 4.5 for its near-frontier performance at a cost-effective price point (~$0.01 per application analysis).
 
 **Storage** (planned): DynamoDB for session-based application data and S3 for secure input storage, both with encryption at rest.
 
@@ -55,7 +55,7 @@ AccessFlow uses a serverless architecture optimized for AWS Free Tier, ensuring 
 
 ### AWS Services Used
 
-1. **Amazon Bedrock**: Core AI generation using Claude 3.5 Haiku
+1. **Amazon Bedrock**: Core AI generation using Claude Haiku 4.5
    - Generates empathetic job summaries in plain English
    - Creates capability-focused positioning analysis
    - Produces tailored cover letters respecting disclosure preferences
@@ -131,7 +131,7 @@ Balancing debugging needs with strict privacy requirements. Solution: Designed a
 Ensuring WCAG AA compliance across dynamic content. Solution: Implemented comprehensive ARIA labels, keyboard navigation patterns, focus management, and screen reader announcements using React best practices.
 
 **Challenge 4: Cost Optimization**
-Staying within AWS Free Tier limits. Solution: Selected Claude 3.5 Haiku model, implemented request throttling, used on-demand DynamoDB billing, and optimized Lambda bundle sizes to reduce execution time.
+Staying within AWS Free Tier limits. Solution: Selected Claude Haiku 4.5 model, implemented request throttling, used on-demand DynamoDB billing, and optimized Lambda bundle sizes to reduce execution time.
 
 **Challenge 5: Development Velocity**
 Maintaining test coverage while rapidly iterating on Lambda handlers. Solution: Created an automated test generation hook using Kiro IDE that triggers whenever Lambda handler files are saved, automatically generating or updating Jest test files with happy path and error handling scenarios.

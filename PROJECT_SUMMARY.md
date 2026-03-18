@@ -150,7 +150,7 @@ Each function has:
 
 ### Phase 1: Bedrock Integration (Priority)
 - [ ] Set up AWS credentials
-- [ ] Enable Bedrock model access (Claude 3.5 Haiku)
+- [ ] Enable Bedrock model access (Claude Haiku 4.5)
 - [ ] Replace mock functions in `backend/src/services/bedrock.ts`
 - [ ] Test with real AI generation
 
@@ -189,7 +189,7 @@ Each function has:
 ### Free-Tier Optimized
 - Serverless architecture (Lambda + API Gateway)
 - On-demand DynamoDB billing
-- Cost-effective Claude model (Claude 3.5 Haiku)
+- Cost-effective Claude model (Claude Haiku 4.5)
 - Static hosting via S3 + CloudFront
 
 ## Technology Stack

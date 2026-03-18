@@ -1,4 +1,4 @@
-import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
+import { APIGatewayProxyEvent, APIGatewayProxyEventV2, APIGatewayProxyResult } from 'aws-lambda';
 import { AnalyzeRequest, AnalyzeResponse, ErrorResponse } from '../types.js';
 import { validateInput } from '../utils/validation.js';
 import { generateSessionId } from '../utils/session.js';
@@ -19,11 +19,12 @@ import {
  * Analyzes job application and generates tailored materials
  */
 export async function handler(
-  event: APIGatewayProxyEvent
+  event: APIGatewayProxyEvent | APIGatewayProxyEventV2
 ): Promise<APIGatewayProxyResult> {
   try {
-    // Parse request body
-    if (!event.body) {
+    // Parse request body - handle both v1 and v2 event formats
+    const rawBody = event.body;
+    if (!rawBody) {
       return {
         statusCode: 400,
         headers: { 'Content-Type': 'application/json' },
@@ -34,7 +35,12 @@ export async function handler(
       };
     }
 
-    const input: AnalyzeRequest = JSON.parse(event.body);
+    // Handle base64 encoded body (API Gateway v2 can base64 encode)
+    const bodyString = ('isBase64Encoded' in event && event.isBase64Encoded)
+      ? Buffer.from(rawBody, 'base64').toString('utf-8')
+      : rawBody;
+
+    const input: AnalyzeRequest = JSON.parse(bodyString);
 
     // Validate input
     const validation = validateInput(input);
@@ -104,10 +110,12 @@ export async function handler(
       statusCode: 200,
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'POST,OPTIONS'
       },
       body: JSON.stringify(response)
-    };
+    } as any;
 
   } catch (error) {
     // Log error without sensitive data (no bodies, no PII)
@@ -135,12 +143,14 @@ export async function handler(
       statusCode,
       headers: { 
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'POST,OPTIONS'
       },
       body: JSON.stringify({
         error: statusCode === 503 ? 'ServiceUnavailable' : 'InternalError',
         message: errorMessage
       } as ErrorResponse)
-    };
+    } as any;
   }
 }

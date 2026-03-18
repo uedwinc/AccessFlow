@@ -169,7 +169,7 @@ interface ErrorResponse {
 **Bedrock Integration**:
 - **Service**: Amazon Bedrock Converse API
 - **Region**: us-east-1
-- **Model**: Claude 3.5 Haiku or Sonnet (cost-optimized)
+- **Model**: Claude Haiku 4.5 or Sonnet (cost-optimized)
 - **API**: `converse` method with message-based interface
 
 **Error Handling**:
@@ -277,7 +277,7 @@ interface ApplicationRecord {
 
 ### Amazon Bedrock Integration
 
-**Model Selection**: Claude 3.5 Haiku (cost-optimized) or Claude 3.5 Sonnet (quality-optimized)
+**Model Selection**: Claude Haiku 4.5 (cost-optimized) or Claude 3.5 Sonnet (quality-optimized)
 
 **Converse API Usage**:
 
@@ -288,7 +288,7 @@ const client = new BedrockRuntimeClient({ region: "us-east-1" });
 
 async function generateJobSummary(jobDescription: string): Promise<string> {
   const command = new ConverseCommand({
-    modelId: "anthropic.claude-3-5-haiku-20241022-v1:0",
+    modelId: "anthropic.claude-haiku-4-5-20251001-v1:0",
     messages: [
       {
         role: "user",

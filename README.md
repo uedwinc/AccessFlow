@@ -45,7 +45,7 @@ aws configure
 
 3. Enable Bedrock model access:
    - Go to AWS Console → Amazon Bedrock → Model Access
-   - Request access to Claude 3.5 Sonnet or Claude 3.5 Haiku
+   - Request access to Claude 3.5 Sonnet or Claude Haiku 4.5
    - Wait for approval (usually instant)
 
 4. Copy environment variables:
@@ -120,7 +120,7 @@ The backend now uses **real Amazon Bedrock API calls** via the Converse API:
 Configure via `BEDROCK_MODEL_ID` in `.env`:
 
 - **Claude 3.5 Sonnet** (default): Best quality, higher cost (~$0.027/application)
-- **Claude 3.5 Haiku**: Good quality, faster, lower cost (~$0.007/application)
+- **Claude Haiku 4.5**: Near-frontier performance, fast, lower cost (~$0.01/application)
 
 See **AWS_SETUP.md** for detailed configuration.
 
@@ -226,7 +226,7 @@ This application is designed for AWS serverless deployment:
 - **Frontend**: S3 + CloudFront
 - **Backend**: Lambda + API Gateway
 - **Storage**: DynamoDB + S3
-- **AI**: Amazon Bedrock (Claude 3.5 Haiku)
+- **AI**: Amazon Bedrock (Claude Haiku 4.5)
 
 See `.kiro/specs/accessflow-core-mvp/` for detailed requirements and design documentation.
 
